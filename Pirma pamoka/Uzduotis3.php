@@ -10,11 +10,11 @@
     <?php
         $a = array(-10, 0, 2, 9, -5);
         $i = 0;
-        while ($i < count($a)) {
+        while ($i 1< count($a)) {
             echo "$a[$i], ";
             $i++;
         }
-        
+
 
     ?>
 </body>
