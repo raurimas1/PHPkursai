@@ -10,13 +10,11 @@
     <?php
         $a = array(-10, 0, 2, 9, -5);
         sort($a);
+
         for ($i=0; $i < count($a); $i++) { 
             echo $a[$i];
-            
+            echo '<br>';     
         }    
-        
-
-
     ?>
 </body>
 </html>
