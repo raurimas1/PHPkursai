@@ -8,65 +8,37 @@
 </head>
 <body><p>
     <?php
-    $a = 2; $b = 10; $c = 8;
-    if ($a + $b != $c && $a + $c != $b) {
-             echo "skaiciai {$a} {$b} {$c} gali buti trikampio krastiniu ilgiai,\n";
-             if ($a != $b && $a != $c && $b != $c) {
-                echo "ivairakrastis trikampis\n ";
-                if ($a == $b && $a == $c && $b == $c){
-                    echo "lygiakrastis trikampis";}
-                    if ($a == $b && $a != $b || $a == $c && $a != $b){
-                        echo "lygiasonis trikampis";
-                    }
-                }
-            }
-            else {
-            echo "skaiciai {$a} {$b} {$c} negali buti trikampio krastiniu ilgiai,\n";}
-    
-    $a = 3; $b = 4; $c = 5;
-    if ($a + $b != $c && $a + $c != $b) {
-            echo "skaiciai {$a} {$b} {$c} gali buti trikampio krastiniu ilgiai,\n";
+
+    function tikrinimas($a, $b, $c){
+        if ($a + $b != $c && $a + $c != $b && $b + $c != $a) {
+            echo "{$a} {$b} {$c} gali,\n";
             if ($a != $b && $a != $c && $b != $c) {
-                echo "ivairakrastis trikampis\n ";
-                if ($a == $b && $a == $c && $b == $c){
-                    echo "lygiakrastis trikampis";}
-                    if ($a == $b && $a != $b || $a == $c && $a != $b){
-                        echo "lygiasonis trikampis";
-                    }
+                echo "ivairakrastis".'<br>';}
+            if ($a == $b && $a == $c && $b == $c){
+                echo "lygiakrastis".'<br>';}
+            if ($a == $b && $a != $b || $a == $c && $a != $b){
+                echo "lygiasonis".'<br>';}
                 }
+        else {
+            echo "{$a} {$b} {$c} negali".'<br>';}
             }
-            else {
-            echo "skaiciai {$a} {$b} {$c} negali buti trikampio krastiniu ilgiai,\n";}
+
+
+    $a = 2; $b = 10; $c = 8;
+    tikrinimas(2, 10, 8);
+                
+            
+    $a = 3; $b = 4; $c = 5;
+    tikrinimas(3, 4, 5);
+            
      
     $a = 5; $b = 5; $c = 5;
-    if ($a + $b != $c) {
-        if ($a + $c != $b) {
-            echo "skaiciai {$a} {$b} {$c} gali buti trikampio krastiniu ilgiai,\n";
-            if ($a != $b && $a != $c && $b != $c) {
-                echo "ivairakrastis trikampis\n ";}
-                if ($a == $b && $a == $c && $b == $c){
-                    echo "lygiakrastis trikampis";}
-                    if ($a == $b && $a != $b || $a == $c && $a != $b){
-                        echo "lygiasonis trikampis";}
-                    }
-        }
-            else {
-            echo "skaiciai {$a} {$b} {$c} negali buti trikampio krastiniu ilgiai,\n";
-    }   
+    tikrinimas(5, 5, 5);
+                    
+     
     $a = 5; $b = 6; $c = 5;
-    if ($a + $b != $c) {
-        if ($a + $c != $b) {
-            echo "skaiciai {$a} {$b} {$c} gali buti trikampio krastiniu ilgiai.\n";
-            if ($a != $b && $a != $c && $b != $c) {
-                echo "ivairakrastis trikampis\n ";}
-                if ($a == $b && $a == $c && $b == $c){
-                    echo "lygiakrastis trikampis";}
-                    if ($a == $b && $a != $b || $a == $c && $a != $b){
-                        echo "lygiasonis trikampis";}
-                }
-            }
-            else {
-            echo "skaiciai {$a} {$b} {$c} negali buti trikampio krastiniu ilgiai.\n";}
+    tikrinimas(5, 6, 5);
+            
      ?></p>
 </body>
 </html>
