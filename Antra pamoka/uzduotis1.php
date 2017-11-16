@@ -12,11 +12,15 @@
         $b = [8, 5, 3, 25];
 
         function vidurkis($x){
-            $y = array_sum($x);
+            //$y = array_sum($x);
+            $y = 0;
+            for ($i=0; $i < count($x); $i++) { 
+                $y += $x[$i];
+            }
             $y = $y / 4;
             return $y;
         }
-        echo vidurkis($a)- vidurkis($b);
+        echo vidurkis($a) - vidurkis($b);
     ?>
 </body>
 </html>
