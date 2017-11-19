@@ -8,13 +8,30 @@
 </head>
 <body>
     <?php
-        $a = array(-10, 0, 2, 9, -5);
-        rsort($a);
+        $a = array(-10, 0, 2, 9, -5);        
+        
+        for ($j = 0; $j < count($a); $j++) {
+            for ($i = 0; $i < count($a)-1; $i++) {
+                if ($a[$i] < $a[$i+1]) {
+                    $laikinas = $a[$i+1];
+                    $a[$i+1] = $a[$i];
+                    $a[$i] = $laikinas;
+                    
+                }
+            }
+        }
 
-        for ($i=0; $i < count($a); $i++) { 
-            echo $a[$i];
-            echo '<br>';     
-        }    
+        for ($j=0; $j < count($a); $j++) { 
+            echo $a[$j];
+            echo '<br>';
+        }
+
+              
+        // rsort($a);
+        // for ($i=0; $i < count($a); $i++) { 
+        //     echo $a[$i];
+        //     echo '<br>';     
+        // }    
     ?>
 </body>
 </html>
