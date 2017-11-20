@@ -17,7 +17,7 @@
             for ($i=0; $i < count($x); $i++) { 
                 $y += $x[$i];
             }
-            $y = $y / 4;
+            $y = $y / count($x);
             return $y;
         }
         echo vidurkis($a) - vidurkis($b);
