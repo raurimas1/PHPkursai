@@ -8,21 +8,35 @@
 </head>
 <body>
     <?php
-        $a = array('Jonas', 'Petras', 'Antanas', 'Povilas');
-        
-        
-        foreach ($a as $key => $value) {
-            if ($value[$key] != $value[$key+1]) {
-                echo $value[$key];
-                echo '<br>';
-                echo $value[$key+2];
-            }
-            echo $value;
+    
+    //du ciklai- isorinis ir vidinis
+    $a = ['Jonas', 'Petras', 'Antanas', 'Povilas'];
+    for ($i=0; $i < count($a) - 1 ; $i++) { 
+        //echo $a[$i];
+        for ($j = $i +1; $j < count($a) ; $j++) { 
+            echo $a[$i] . '-' . $a[j];
+        }
+    }
+// if 
 
-           echo $value;
+
+        // $a = array('Jonas', 'Petras', 'Antanas', 'Povilas');
+        
+        
+        // foreach ($a as $key => $value) {
+        //     for ($i=0; $i < ; $i++) { 
+        //         # code...
+        //     }
+        //      if ($value[$key] != $value[$key+1]) {
+        //         $laikinas = $value .'-'. $value;
+        //         echo $laikinas;
+        //     }
+            
+
+           
                
                 
-        }
+        // }
     ?>
 </body>
 </html>
