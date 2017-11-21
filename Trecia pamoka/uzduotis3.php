@@ -14,7 +14,7 @@ foreach ($a as $eilute) {
 
 $x = 0;
 foreach ($sum as $sumos) {
-    if ($sumos > $b) {
+    if ($sumos > $x) {
         $x = $sumos;
     }
 }
