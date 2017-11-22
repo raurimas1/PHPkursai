@@ -11,32 +11,29 @@
 
     class Zmogus
     {
-        public $vardas;
+        public $vard;
         public $pavarde;
 
-        function __contruct($vardas, $pavarde){
-            $this->vardas = $vardas;
+        function __construct($vard, $pavarde){
+            $this->vardas = $vard;
             $this->pavarde = $pavarde;
         }
     }
     
-    $zmones = (
-        new Zmogus('Jonas', 'Jonaitis')
-    );
-
-    // $zmones = [['vardas' => 'Jonas', 'pavarde' => 'Jonaitis'],
-    //            ['vardas' => 'Petras', 'pavarde' => 'Petraitis'],
-    //            ['vardas' => 'Antanas', 'pavarde' => 'Antanaitis']];
+    $zmones = [
+        new Zmogus("Jonas", "Jonaitis"),
+        new Zmogus('Petras', 'Petraitis'),
+        new Zmogus('Antanas', 'Antanaitis')
+        ];
     ?>
     <table border="1">
-        <tr><th>Vardas</th><th>Pavarde</th></tr>
-    
-    <?php foreach ($zmones as $laukas => $reiksme) :?>
-    <tr>
-        <td><?= $Zmogus->vardas ?></td>
-        <td><?= $Zmogus->pavarde ?></td>
-    </tr>
-<?php endforeach; ?>
+        <tr><th>Vardas</th><th>Pavarde</th></tr>    
+            <?php foreach ($zmones as $zmogus):?>
+        <tr>
+            <td><?php echo $zmogus->vardas ?></td>
+            <td><?= $zmogus->pavarde ?></td>
+        </tr>
+            <?php endforeach; ?>
     </table>
     
 </body>

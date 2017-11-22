@@ -22,10 +22,10 @@
     <th>Matematikos vid.</th>
     <th>Bendras vidurkis</th></tr>
 
-    <?php foreach ($mokiniai as $vard): ?>
+    <?php foreach ($mokiniai as $mokinys): ?>
     <tr>
-        <td><?php echo $vard['vardas']; ?></td>
-        <td><?php  ?></td>
+        <td><?php echo $mokinys['vardas']; ?></td>
+        <td><?php echo $mokinys['pazymiai']['lietuviu']; ?></td>
         <td><?php  ?></td>
         <td><?php  ?></td>
         <td><?php  ?></td>
