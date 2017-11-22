@@ -8,9 +8,10 @@
         ]; 
 
     for ($i=0; $i < count($zmones); $i++) { 
-        foreach ($zmones[$i] as $key=> $value) {
-            echo $value;
-            echo $kedy;
+        for ($j=$i+1; $j < count($zmones); $j++) { 
+            if ($zmones[$i]['lytis'] != $zmones[$j]['lytis']) {
+                echo $zmones[$i]['vardas'] . '-' . $zmones[$j]['vardas']. '<br>';
+            }
         }
     }
     ?>
