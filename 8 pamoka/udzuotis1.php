@@ -6,4 +6,11 @@
         ['vardas' => 'Marytė', 'lytis' => 'M'], 
         ['vardas' => 'Eglė', 'lytis' => 'M']
         ]; 
-    
+
+    for ($i=0; $i < count($zmones); $i++) { 
+        foreach ($zmones[$i] as $key=> $value) {
+            echo $value;
+            echo $kedy;
+        }
+    }
+    ?>
