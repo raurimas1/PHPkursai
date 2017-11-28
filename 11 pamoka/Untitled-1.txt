@@ -1,0 +1,13 @@
+vardas
+public gimimodata
+
+function construct(vardas, data)
+
+function metai(){
+    $gd = new DateTime(this->gimimodata);
+    $now = new DateTime()
+
+    $diff = gd - diff($now);
+    return $diff->y;
+}
+
