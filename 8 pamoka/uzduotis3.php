@@ -12,7 +12,36 @@
             ];
         
         
-    
+        
+       
+        foreach ($mokiniai as $mokinys) {
+            foreach ($mokinys['pazymiai'] as $dalykoPazymiai) {    
+                //var_dump($dalykoPazymiai);
+                foreach ($dalykoPazymiai as $pazimys) {
+                    
+                    // echo ($pazimys). '<br>';
+                    
+                }
+            }
+        }
+        function vidurkis($dalykoPazymiai){
+            $suma = 0;
+            foreach ($dalykoPazymiai as $pazimys) {
+                $suma += $pazimys;
+            }
+            return $suma / count($dalykoPazymiai);
+        }
+        
+            
+        function vidurkiuVidurkis($mokiniai){
+            $vid = [];
+            foreach ($mokiniai['pazymiai'] as $dalykoPazymiai) {
+                $vid += vidurkis($mokiniai);
+            }
+            echo $vid;
+        }
+
+        vidurkiuVidurkis($mokiniai);
     ?>
 </body>
 </html>

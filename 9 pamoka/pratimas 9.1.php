@@ -20,14 +20,15 @@
             return $sum / count($pazymiai);
         }
 
-        function vidurkiai($mokinys){
-            $trimestras = [];
-            foreach ($mokinys['pazymiai'] as $dalykas=> $pazymiai) {
-                $vidurkis = vidurkis($pazymiai);
-                $trimestras[$dalykas] = $trimestras;
-            }
-            $mokinys['trimestras'] = $trimestras;
-        }
+        // function vidurkiai($mokinys){
+        //     $vidurkis = 0;
+        //     $trimestras = [];
+        //     foreach ($mokinys['pazymiai'] as $dalykas =>$pazymiai) {
+        //         $vidurkis = vidurkis($pazymiai);
+        //         $trimestras[$dalykas] = $vidurkis;
+        //     }
+        //     $mokinys['trimestras'] = $trimestras;
+        // }
     foreach ($mokiniai as $i => $n) {
         $mokiniai[$i]['trimestras'] = vidurkiai($n);
         $mokiniai[$i]['vidurkis'] = vidurkiai($mokiniai[$i]['trimestras']);
@@ -35,15 +36,15 @@
 var_dump($mokiniai);
 
 
-//rusiavimas
-for ($i=0; $i < count($mokiniai)-1; $i++) { 
-    $x = $mokiniai[$i];
-    for ($j=$i+1; $j < count($mokiniai); $j++) { 
-        if ($x['vidurkis'] > $mokiniai[$j]['vidurkis']) {
+// //rusiavimas
+// for ($i=0; $i < count($mokiniai)-1; $i++) { 
+//     $x = $mokiniai[$i];
+//     for ($j=$i+1; $j < count($mokiniai); $j++) { 
+//         if ($x['vidurkis'] > $mokiniai[$j]['vidurkis']) {
             
-        }
-    }
-}
+//         }
+//     }
+// }
 
 
 ?>
@@ -63,7 +64,7 @@ for ($i=0; $i < count($mokiniai)-1; $i++) {
         <td><?php echo $mokinys['vardas']; ?></td>
         
         <td><?php 
-            foreach ($mokinys['pazymiai'] as $dalykas => $p): ?>
+            foreach ($mokinys['pazymiai'] as $dalykas => $pazymiai): ?>
                 <div>
                     <?php echo $dalykas . ':' ; ?>
                     <?php foreach ($pazymiai as $pazimys): ?>
