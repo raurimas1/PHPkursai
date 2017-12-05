@@ -34,15 +34,19 @@ $sql = 'SELECT `number`, `distance`/`time`*3.6 as `speed`, `date` FROM radars OR
 $result = $conn->query($sql);
 if ($result->num_rows > 0) { 
     ?>
-    <?php if ($offset > 0): ?>
-    
-        <a href="<?= "?offset=".($offset >= $page ? $offset - $page : 0) ?>">Atgal</a>
-    <?php endif; ?>
+
 
     <?php if ($result->num_rows == $page + 1): ?>
     
-        <a href="<?= "?offset=".($offset + $page) ?>">Pirmyn</a>
+        <p><a href="<?= "?offset=".($offset + $page) ?>">Pirmyn</a></p>
     <?php endif; ?>
+
+    <?php if ($offset > 0): ?>
+    
+        <p><a href="<?= "?offset=".($offset >= $page ? $offset - $page : 0) ?>">Atgal</a></p>
+    <?php endif; ?>
+
+    
 
     <table border=1>
         <tr>
