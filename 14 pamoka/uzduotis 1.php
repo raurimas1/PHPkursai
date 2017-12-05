@@ -36,15 +36,7 @@ if ($result->num_rows > 0) {
     ?>
 
 
-    <?php if ($result->num_rows == $page + 1): ?>
     
-        <p><a href="<?= "?offset=".($offset + $page) ?>">Pirmyn</a></p>
-    <?php endif; ?>
-
-    <?php if ($offset > 0): ?>
-    
-        <p><a href="<?= "?offset=".($offset >= $page ? $offset - $page : 0) ?>">Atgal</a></p>
-    <?php endif; ?>
 
     
 
@@ -69,9 +61,21 @@ if ($result->num_rows > 0) {
         <?php
     }
     echo '</table>';
+
+    
 } else {
     echo 'nėra duomenų';
 }
+
+    if ($result->num_rows == $page + 1): ?>
+
+        <p><a href="<?= "?offset=".($offset + $page) ?>">Pirmyn</a></p>
+    <?php endif; ?>
+
+    <?php if ($offset > 0): ?>
+
+        <p><a href="<?= "?offset=".($offset >= $page ? $offset - $page : 0) ?>">Atgal</a></p>
+    <?php endif; 
 $conn->close();
 ?>
 </body>
