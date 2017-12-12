@@ -14,8 +14,7 @@
         
         
         foreach ($mokiniai as $mokinys) {
-            foreach ($mokinys['pazymiai'] as $pazymys) {    
-               
+            foreach ($mokinys['pazymiai'] as $pazymys) {      
             }
         }
         
@@ -28,7 +27,6 @@
                             $vid = round($vid / count($mokinys['pazymiai']));
                             echo $mokinys['vardas'] . " ". $vid . "<br>";    
             }
-            return $vid;    
         }
 
         function vidurkis($pazymys){
@@ -38,13 +36,9 @@
             }
             $vidurkio = round($suma / count($pazymys));
             return $vidurkio;
-            
-        }
-
+            }
 
         semestras($mokiniai);
-        
-        
     ?>
 </body>
 </html>
