@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>pratimas 9.2</title>
+    <title>Uzdavinys</title>
 </head>
 <body>
 <?php
@@ -20,8 +20,11 @@
             
 
         }
-        function tvidurikis($trimestras){
-            
+        function vidurkis($pazymiai){
+            $suma = 0;
+            foreach ($this->trimestras as $pazymys) {
+                $suma += $pazymys;
+            } return $suma/count($this->trimestras);
         }
     }
     
@@ -30,6 +33,9 @@
         new Mokinys('Petras', 'Petraitis', ['lietuviu' => 4, 'matematika' => 5, 'anglu' => 2]),
         new Mokinys('Antanas', 'Antanaitis', ['lietuviu' => 10, 'matematika' => 9, 'anglu' => 8])
         ];
+    
+   sort($mokiniai);
+   
     ?>
     <table border="1">
         <tr><th>Vardas</th><th>Pavarde</th><th>Trimestro vidurkis</th></tr>    
@@ -37,7 +43,7 @@
         <tr>
             <td><?php echo $zmogus->vardas ?></td>
             <td><?= $zmogus->pavarde ?></td>
-            <td><?= $zmogus->tvidurikis  ?></td>
+            <td><?= round($zmogus->vidurkis($zmogus->trimestras), 1) ?></td>
         </tr>
             <?php endforeach; ?>
     </table>
