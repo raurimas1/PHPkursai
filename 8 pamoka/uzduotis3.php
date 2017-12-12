@@ -8,40 +8,43 @@
     <?php
         $mokiniai = [
             ['vardas' => 'Jonas', 'pazymiai' => ['lietuviu' => [4, 8, 6, 7], 'anglu' =>[6, 7, 8], 'matematika' => [3, 5, 4]]], 
-            ['vardas' => 'Ona', 'pazymiai' => ['lietuviu' => [10, 9, 10], 'anglu' => [9, 8, 10], 'matematika' => [10, 10, 9, 9]]]
+            ['vardas' => 'Ona', 'pazymiai' => ['lietuviu' => [10, 9, 10], 'anglu' => [9, 8, 10], 'matematika' => [10, 10, 9, 9]]],
+            ['vardas' => 'Antanas', 'pazymiai' => ['lietuviu' => [7, 9, 10], 'anglu' => [6, 8, 10], 'matematika' => [2, 10, 9, 9]]]
             ];
         
         
-        
-       
         foreach ($mokiniai as $mokinys) {
-            foreach ($mokinys['pazymiai'] as $dalykoPazymiai) {    
-                //var_dump($dalykoPazymiai);
-                foreach ($dalykoPazymiai as $pazimys) {
-                    
-                    // echo ($pazimys). '<br>';
-                    
-                }
+            foreach ($mokinys['pazymiai'] as $pazymys) {    
+               
             }
-        }
-        function vidurkis($dalykoPazymiai){
-            $suma = 0;
-            foreach ($dalykoPazymiai as $pazimys) {
-                $suma += $pazimys;
-            }
-            return $suma / count($dalykoPazymiai);
         }
         
-            
-        function vidurkiuVidurkis($mokiniai){
-            $vid = [];
-            foreach ($mokiniai['pazymiai'] as $dalykoPazymiai) {
-                $vid += vidurkis($mokiniai);
+        function semestras($mokiniai){
+            foreach ($mokiniai as $mokinys) {   
+                $vid = 0;             
+                foreach ($mokinys['pazymiai'] as $pazymys) {
+                                $vid += vidurkis($pazymys);
+                            }
+                            $vid = round($vid / count($mokinys['pazymiai']));
+                            echo $mokinys['vardas'] . " ". $vid . "<br>";    
             }
-            echo $vid;
+            return $vid;    
         }
 
-        vidurkiuVidurkis($mokiniai);
+        function vidurkis($pazymys){
+            $suma = 0;
+            foreach ($pazymys as $ivertinimas) {
+                $suma += $ivertinimas;
+            }
+            $vidurkio = round($suma / count($pazymys));
+            return $vidurkio;
+            
+        }
+
+
+        semestras($mokiniai);
+        
+        
     ?>
 </body>
 </html>

@@ -20,11 +20,8 @@ if ($conn->connect_error) {
     die('Nepavyko prisjungti: ' . $conn->connect_error);
 }
 
-$page = 5;
-if (isset($_GET['page'])) {
-    $page = $_GET['page'];
-}
-if ($page < 5) $page = 5;
+$page = 2;
+
 if (isset($_GET['offset'])) {
     $offset = $_GET['offset'];
 } else {
