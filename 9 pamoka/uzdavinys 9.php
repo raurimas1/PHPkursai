@@ -32,9 +32,7 @@
         new Mokinys("Jonas", "Jonaitis", ['lietuviu' => 8, 'matematika' => 9, 'anglu' => 8]),
         new Mokinys('Petras', 'Petraitis', ['lietuviu' => 4, 'matematika' => 5, 'anglu' => 2]),
         new Mokinys('Antanas', 'Antanaitis', ['lietuviu' => 10, 'matematika' => 9, 'anglu' => 8])
-        ];
-    
-   sort($mokiniai);
+    ];
    
     ?>
     <table border="1">
