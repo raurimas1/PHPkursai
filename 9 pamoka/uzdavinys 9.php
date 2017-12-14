@@ -33,7 +33,17 @@
         new Mokinys('Petras', 'Petraitis', ['lietuviu' => 4, 'matematika' => 5, 'anglu' => 2]),
         new Mokinys('Antanas', 'Antanaitis', ['lietuviu' => 10, 'matematika' => 9, 'anglu' => 8])
     ];
-   
+    function rusiavimas($x1, $x2){
+        if ($x1->vidurkis() == $x2->vidurkis()) {
+            return 0;
+        }elseif ($x1->vidurkis() > $x2->vidurkis()) {
+            return -1;
+        }else {
+            return 1;
+        }
+    }
+
+    usort($mokiniai, "rusiavimas");
     ?>
     <table border="1">
         <tr><th>Vardas</th><th>Pavarde</th><th>Trimestro vidurkis</th></tr>    
