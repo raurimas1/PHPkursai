@@ -20,7 +20,7 @@
             
 
         }
-        function vidurkis($pazymiai){
+        function vidurkis(){
             $suma = 0;
             foreach ($this->trimestras as $pazymys) {
                 $suma += $pazymys;
