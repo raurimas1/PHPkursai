@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateRadarsTable extends Migration
+class CreateDriversTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,11 @@ class CreateRadarsTable extends Migration
      */
     public function up()
     {
-        Schema::create('radars', function (Blueprint $table) {
+        Schema::create('drivers', function (Blueprint $table) {
             $table->increments('id');
-            $table->dateTime('date');
-            $table->string('number');
-            $table->double('distance');
-            $table->double('time');
-            $table->integer('driver_id')->nullable();
+            $table->string('name');
+            $table->string('city');
+            $table->softDeletes();
             $table->timestamps();
         });
     }
@@ -31,6 +29,6 @@ class CreateRadarsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('radars');
+        Schema::dropIfExists('drivers');
     }
 }
